@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-weight: 600;
+    
+}
+
+body{
+    background:url('assets/cloudbg.webp')no-repeat center center fixed;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 0.5s ease-in-out;
+    padding: 0;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+    
+}
+
+
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    background: rgb(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+}
+.logo-overlay-container {
+  position: absolute;
+  top: 35px;
+  left: 60px;
+  width: 70px;
+  height: 70px;
+  z-index: 1000;
+  margin-top: 25px;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  
+}
+
+.logo-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-left: 2px;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-optical-sizing: auto;
+}
+.highlight-letter {
+  color: #071e69; 
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px #00bfff,
+    0 0 40px #00bfff;
+  font-weight: bold;
+  font-weight: bolder;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-optical-sizing: auto;
+}
+
+/*utilities*/
+.regular-txt{
+    font-weight: 400;
+}
+.main-container{
+    width: 330px;
+    height: 630px;
+    z-index: 1;
+    background: linear-gradient(to top,rgb(0, 0, 0, 0.15),rgb(255, 255, 255, 0.15));
+    border-radius: 12px;
+    backdrop-filter: blur(100px);
+    padding: 10px;
+    position: relative;
+    padding-bottom: 5px;
+    overflow: hidden;
+    flex: 1;
+    flex-grow: 1;
+    margin-top: 190px;
+}
+/* Wave 1 */
+.main-container .wave:nth-child(1) {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(744deg, #287388, #5c548f 60%, #00ddeb);
+  opacity: 0.6;
+  border-radius: 40%;
+  animation: waveSpin 45s linear infinite;
+  z-index: -1;
+}
+
+/* Wave 2 */
+.main-container .wave:nth-child(2) {
+  position: absolute;
+  width: 600px;
+  height: 450px;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(744deg, #00c6ff, #5b42f3 60%, #00ddeb);
+  opacity: 0.4;
+  border-radius: 40%;
+  animation: waveSpin 35s linear infinite;
+  z-index: -1;
+}
+
+/* Wave 3 */
+.main-container .wave:nth-child(3) {
+  position: absolute;
+  width: 700px;
+  height: 400px;
+  bottom: -230px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(744deg, #3a8ea6, #5b42f3 60%, #00ddeb);
+  opacity: 0.3;
+  border-radius: 40%;
+  animation: waveSpin 25s linear infinite;
+  z-index: -1;
+}
+
+/* Rotation animation */
+@keyframes waveSpin {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+/*Input container*/
+.input-container{
+    position: relative;
+    margin-bottom: 10px;
+    padding-top: 1px;
+}
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  
+ 
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.city-input {
+  height: 40px; 
+  font-size: 14px;
+  padding: 10px 40px 10px 15px; 
+  outline: none;
+  border: 2px solid rgba(200, 200, 200, 0.5);
+  background-color: transparent;
+  border-radius: 99px;
+  width: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  transition: border 0.25s ease;
+  
+}
+
+.inputGroup label {
+  font-size: 90%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.city-input:focus ~ label,
+.city-input:valid ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0;
+  margin-left: 1.3em;
+  padding: 0 0.4em;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  
+}
+
+.city-input:focus {
+  border-color: rgba(6, 21, 71, 0.15);
+}
+
+.search-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.weather-info{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  border-radius: 15px;
+  padding: 20px;
+
+}
+.location-date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.current-date-txt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.local-time-txt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+}
+.location{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+}
+.weather-summary-container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weather-summary-img{
+   width: 120px;
+   height: 120px;
+   object-fit: contain;
+}
+.weather-summary-info{
+    text-align: end;
+}
+.weather-condition-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+   
+}
+.condition-item{
+    display:flex;
+    align-items: center;
+    gap: 6px;
+    padding-right: 70px;
+   
+}
+.condition-item span{
+    font-size: 30px;
+}
+.forecast-items-container{
+    
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+    padding: 12px 0;
+   
+}
+.forecast-items-container::-webkit-scrollbar{
+    height: 6px;    
+}
+.forecast-items-container::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0, 0.1);
+    border-radius: 99px;   
+}
+.forecast-items-container::-webkit-scrollbar-thumb{
+    background: rgb(0, 0, 0, 0.15);
+    border-radius: 99px;
+
+}
+.forecast-item{
+    min-width: 70px;
+    background: rgb(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 6px;
+    align-items: center;
+    border-radius: 16px;
+    transition: 0.3s background;
+    text-align: center;
+    flex-shrink: 0;
+
+}
+.forecast-item:hover{
+    background: rgb(255, 255, 255, 0.15);
+}
+.forecast-item-img{
+    width:35px;
+    height: 35px;
+}
+.section-msg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
+    position: relative;
+}
+.msg-img{
+    height: 180px;
+    width: 300px;
+}
+h1{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 35px;
+    font-style: inherit;
+}
+.notfound-img{
+    height: 250px;
+    width: 300px;
+}
+/* Day Theme */
+body.day-theme {
+    background-image: url('assets/cloudbg.webp');
+}
+
+body.day-theme .weather-info {
+   background: linear-gradient(to top,rgb(0, 0, 0, 0.15),rgb(255, 255, 255, 0.15));
+    color: #000;
+}
+
+/* Night Theme */
+body.night-theme {
+    background-image: url('assets/nightbg.jpg');
+}
+
+body.night-theme .weather-info {
+    background: linear-gradient(to top,rgba(38, 38, 59, 0.75),rgba(0, 0, 30, 0.75));
+    color: #fff;
+}
+.input-search-fav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.favorite-section {
+  min-width: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 12px;
+  overflow-y: auto;
+  max-height: 170px;
+ 
+}
+
+.favorite-section h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.favorites-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites-list li {
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
+}
+
+.favorites-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+/* From Uiverse.io by andrew-demchenk0 */ 
+.favorite-toggle-container{
+  position: absolute;
+  top: 80px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+}
+.favorite-toggle input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+} 
+
+.favorite-toggle  {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  gap: 8px;
+  top: -10px; 
+}
+
+.favorite-toggle svg {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  transition: transform 0.3s;
+  fill: #666;
+}
+
+.favorite-toggle svg:hover {
+  transform: scale(1.1);
+}
+
+.favorite-toggle input:checked ~ svg {
+  fill: #ffeb49;
+}
+
+/* From Uiverse.io by xopc333 */ 
+.button {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  top: 75px;    
+  left: 15px;   
+  z-index: 1000;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 5px;
+}
+
+.button:before {
+  border: 3px solid #f0eeef;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button:after {
+  border: 3px solid #96daf0;
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.button:hover:before,
+.button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button:hover:after,
+.button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-elem {
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 13px;
+  transform: rotate(180deg);
+  fill: #f0eeef;
+}
+
+.button:hover .button-box,
+.button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-40px);
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.loader {
+  width: 44.8px;
+  height: 44.8px;
+  position: absolute; 
+  top: 100px; 
+  right: 20px;  
+  transform: rotate(45deg);
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 0 50%;
+  background: #0000;
+  background-image: radial-gradient(circle 11.2px at 50% 50%,#0000 94%, #ff4747);
+}
+
+.loader:after {
+  animation: pulse-ytk0dhmd 1s infinite;
+  transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse-ytk0dhmd {
+  to {
+    transform: perspective(336px) translateZ(168px);
+    opacity: 0;
+  }
+}
+.earth-loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.earth-loader-wrapper.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.earth {
+  text-align: center;
+}
+
+.earth-loader-gif {
+  width: 120px;
+  height: 120px;
+}
+
+.earth p {
+  color: white;
+  margin-top: 12px;
+  font-size: 1.25em;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+  color: #ffffff;
+  font-size: 14px;
+  position: relative; /* or 'fixed' if you want it always at bottom */
+  bottom: 0;
+  margin-top: auto;
+  
+}
