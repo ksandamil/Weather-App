@@ -85,10 +85,10 @@ function getCurrentDate(){
 async function updateWeatherInfo(city) {
   
  if (!city || city.trim() === '') {
-  earthloader.classList.remove('active'); // hide loader
+  earthloader.classList.remove('active'); 
   return;
 }
-  earthloader.classList.add('active'); // ✅ show loader
+  earthloader.classList.add('active'); 
 
   
  
@@ -146,7 +146,7 @@ async function updateWeatherInfo(city) {
     console.error(err);
     showDisplaySection(notFoundSection);
   } finally {
-    earthloader.classList.remove('active'); // ✅ hide loader
+    earthloader.classList.remove('active'); 
   }
 }
 
@@ -241,7 +241,7 @@ function updateFavoriteBtnState(city) {
   const isFav = isCityFavorited(city);
   favoriteToggle.classList.toggle('favorited', isFav);
 
-  // toggle checkbox inside the label
+  
   const input = favoriteToggle.querySelector('input[type="checkbox"]');
  
   if (input) input.checked = isFav;
@@ -265,7 +265,7 @@ function renderFavorites() {
   });
 }
 
-// Initial load
+
 document.addEventListener("DOMContentLoaded", () => {
   showDisplaySection(searchCitySection);
 });
@@ -279,10 +279,10 @@ button.addEventListener('click', () => {
   showDisplaySection(searchCitySection);
 });
 });
-// Show the loader
+
 document.querySelector('.earth-loader-wrapper').classList.add('active');
 
-// Hide the loader after some time (example)
+
 setTimeout(() => {
   document.querySelector('.earth-loader-wrapper').classList.remove('active');
 }, 3000);
